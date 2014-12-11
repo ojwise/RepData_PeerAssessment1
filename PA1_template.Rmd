@@ -79,8 +79,9 @@ I then impute the missing values by replacing them with the mean steps per inter
 ## join original dataset (includes NA values) with new column on the mean steps per interval
 data6<-merge(data, data4)
 
-## go through each row in dataset. If the "steps" column contains a NA, ## then reassign that value with the mean steps per interval for that
-## interval
+## go through each row in dataset. If the "steps" column contains a NA,
+## then reassign that value with the mean steps per interval 
+## for that interval
 for (i in 1:nrow(data6)){
   if (is.na(data6[i,2]) == TRUE){
     data6[i,2]<-data6[i,4]
